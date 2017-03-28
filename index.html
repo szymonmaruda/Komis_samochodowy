@@ -1,107 +1,134 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<!-- Latest compiled and minified CSS -->
+	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
+	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="jquery.tablesorter/themes/blue/style.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="jquery.tablesorter/jquery-latest.js"></script>
+	<script type="text/javascript" src="jquery.tablesorter/jquery.tablesorter.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	-->
 	<script type="text/javascript" charset="utf8" src="validator.js"></script>
 
 
 </head>
+
 <body>
-<div class="row">
-	<div class="col-12" style="text-align:center;">
-		<div class="container">Nagłówek</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12" style="text-align:center;">
+				<div class="container">Nagłówek</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+
+			</div>
+			<div class="col-md-8">
+				<form id="form1" name="form1">
+
+					<div class="form-group">
+						<label for="Marka">Marka</label>
+						<input type="text" class="form-control" id="Marka" placeholder="Toyota" onblur="validateMarka()">
+					</div>
+					<div id="marka_alert"></div>
+
+					<div class="form-group">
+						<label for="Model">Model</label>
+						<input type="text" class="form-control" id="Model" placeholder="Yaris" onblur="validateModel()">
+					</div>
+					<div id="model_alert"></div>
+
+					<div class="form-group">
+						<label for="Rok">Rok produkcji</label>
+						<input type="text" class="form-control" id="Rok" placeholder="2006" onblur="validateRok()">
+					</div>
+					<div id="rok_alert"></div>
+
+					<div class="form-group">
+						<label for="Cena">Cena</label>
+						<input type="text" class="form-control" id="Cena" placeholder="19 900.00" onblur="validateCena()">
+					</div>
+					<div id="cena_alert"></div>
+
+					<div class="form-group">
+						<label for="Paliwo">Paliwo</label>
+						<select class="form-control" id="Paliwo" onchange="validatePaliwo()">
+						<option value="0">Wybierz</option>
+						<option value="1">Benzyna</option>
+						<option value="2">Diesel</option>
+						<option value="3">Hybryda</option>
+						<option value="4">Benzyna+LPG</option>
+						<option value="5">Elektryczny</option>
+					</select>
+					</div>
+					<div id="paliwo_alert"></div>
+
+					<div class="form-group">
+						<label for="Kolor">Kolor</label>
+						<input type="text" class="form-control" id="Kolor" placeholder="Czerwony" onblur="validateKolor()">
+					</div>
+					<div id="kolor_alert"></div>
+
+					<div class="form-group">
+						<label for="Pojemnosc">Pojemnosc</label>
+						<input type="text" class="form-control" id="Pojemnosc" placeholder="1.8" onblur="validatePojemnosc()">
+					</div>
+					<div id="pojemnosc_alert"></div>
+
+					<div class="form-group">
+						<label for="Przebieg">Przebieg</label>
+						<input type="text" class="form-control" id="Przebieg" placeholder="234092" onblur="validatePrzebieg()">
+					</div>
+					<div id="przebieg_alert"></div>
+
+					<div class="form-group">
+						<label for="Description">Dodatkowy opis</label>
+						<textarea class="form-control" rows="3" id="Description" placeholder="Wspomaganie kierownicy, nawigacja itp." maxlength="255"></textarea>
+						<div id="counter">Pozostało <span id="charsLeft"></span> znaków.</div>
+					</div>
+
+
+					<button type="submit" class="btn btn-default" value="click" id="click" onclick="validateAll()">Zapisz</button>
+
+				</form>
+
+					<table cellspacing="1" id="myTable" class="tablesorter table table-hover">
+						<thead>
+							<tr>
+								<th>Marka</th>
+								<th>Model</th>
+								<th>Rok produkcji</th>
+								<th>Cena</th>
+								<th>Paliwo</th>
+								<th>Kolor</th>
+								<th>Pojemnosc</th>
+								<th>Przebieg</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+
+			</div>
+			<div class="col-md-2">
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12" style="text-align:center;">
+				Stopka
+			</div>
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-2">
-
-	</div>
-	<div class="col-md-8">
-		<form name="form1">
-
-			<div class="form-group">
-				<label for="Marka">Marka</label>
-				<input type="text" class="form-control" id="Marka" placeholder="Toyota" onblur="validateMarka()">
-			</div>
-			<div id="marka_alert"></div>
-
-			<div class="form-group">
-				<label for="Model">Model</label>
-				<input type="text" class="form-control" id="Model" placeholder="Yaris" onblur="validateModel()">
-			</div>
-			<div id="model_alert"></div>
-
-			<div class="form-group">
-				<label for="Rok">Rok produkcji</label>
-				<input type="text" class="form-control" id="Rok" placeholder="2006" onblur="validateRok()">
-			</div>
-			<div id="rok_alert"></div>
-
-			<div class="form-group">
-				<label for="Cena">Cena</label>
-				<input type="text" class="form-control" id="Cena" placeholder="19 900.00" onblur="validateCena()">
-			</div>
-			<div id="cena_alert"></div>
-
-			<div class="form-group">
-				<label for="Paliwo">Paliwo</label>
-				<select class="form-control" id="Paliwo" onchange="validatePaliwo()">
-					<option value="0">Wybierz</option>
-					<option value="1">Benzyna</option>
-					<option value="2">Diesel</option>
-					<option value="3">Hybryda</option>
-					<option value="4">Benzyna+LPG</option>
-					<option value="5">Elektryczny</option>
-				</select>
-			</div>
-			<div id="paliwo_alert"></div>
-
-			<div class="form-group">
-				<label for="Kolor">Kolor</label>
-				<input type="text" class="form-control" id="Kolor" placeholder="Czerwony" onblur="validateKolor()">
-			</div>
-			<div id="kolor_alert"></div>
-
-			<div class="form-group">
-				<label for="Pojemnosc">Pojemnosc</label>
-				<input type="text" class="form-control" id="Pojemnosc" placeholder="1.8" onblur="validatePojemnosc()">
-			</div>
-			<div id="pojemnosc_alert"></div>
-
-			<div class="form-group">
-				<label for="Przebieg">Przebieg</label>
-				<input type="text" class="form-control" id="Przebieg" placeholder="234092" onblur="validatePrzebieg()">
-			</div>
-			<div id="przebieg_alert"></div>
-
-			<div class="form-group">
-				<label for="Description">Dodatkowy opis</label>
-				<textarea class="form-control" rows="3" id="Description" placeholder="Wspomaganie kierownicy, nawigacja itp." maxlength="255"></textarea>
-				<div id="counter">Pozostało <span id="charsLeft"></span> znaków.</div>
-			</div>
-
-
-			<button type="submit" class="btn btn-default">Zapisz</button>
-
-		</form>
-	</div>
-	<div class="col-md-2">
-
-	</div>
-</div>
-<div class="row">
-	<div class="col-12" style="text-align:center;">
-		Stopka
-	</div>
-</div>
-
-<script type="text/javascript" charset="utf8" src="charCounter.js"></script>
+	<script type="text/javascript" charset="utf8" src="charCounter.js"></script>
 </body>
+
 </html>
