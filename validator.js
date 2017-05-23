@@ -1,3 +1,6 @@
+//to do
+// validate in php
+
 function validateMarka() {
     var x = document.forms["form1"]["Marka"].value;
     var bladNazwa = document.getElementById('marka_alert');
@@ -188,49 +191,11 @@ function validatePrzebieg() {
     }
 }
 
-function validateAll() {
+/*function validateAll() {
     if (validateMarka() && validateModel() && validateRok() && validateCena() && validatePaliwo() && validateKolor() && validatePojemnosc() && validatePrzebieg()) {
 
-        var rows = "";
-        var marka = document.getElementById('Marka').value;
-        var model = document.getElementById('Model').value;
-        var rok = document.getElementById('Rok').value;
-        var cena = document.getElementById('Cena').value;
-        var paliwo = document.getElementById('Paliwo').value;
-        var kolor = document.getElementById('Kolor').value;
-        var pojemnosc = document.getElementById('Pojemnosc').value;
-        var przebieg = document.getElementById('Przebieg').value;
-
-        //document.getElementById("myTable").setAttribute("style", "display:block");
-
-        //rows += "<tr><td>" + marka + "</td><td>" + model + "</td><td>" + rok + "</td><td>" + cena + "</td><td>" + paliwo + "</td><td>" + kolor + "</td><td>" + pojemnosc + "</td><td>" + przebieg + "</td></tr>";
-        //$(rows).appendTo($("#myTable tbody"));
-        //$("#myTable").tablesorter();
-        <?php
-        $servername = "mysql.hostinger.pl";
-        $username = "u657292145_auto";
-        $password = "ciasteczko1";
-
-        try {
-            $conn = new PDO("mysql:host=$servername;dbname=u657292145_auto", $username, $password);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully";
-            }
-        catch(PDOException $e)
-            {
-            echo "Connection failed: " . $e->getMessage();
-            }
 
 
-
-            $sql = "INSERT INTO Samochody (marka, model, pojemnosc_silnika, rok_produkcji, przebieg, kolor, paliwo, uwagi) VALUES (marka,model,)";
-            $result = $conn->query($sql);
-
-        ?>
-
-        return true;
-    } else {
-        return false;
     }
-}
+  }
+*/
